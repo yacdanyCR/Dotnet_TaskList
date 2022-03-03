@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj": {}
+    "c:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj": {
+    "c:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj",
+        "projectUniqueName": "c:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj",
         "projectName": "TaskList",
-        "projectPath": "C:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj",
+        "projectPath": "c:\\Users\\Yacdany\\Desktop\\TaskList\\TaskList.csproj",
         "packagesPath": "C:\\Users\\Yacdany\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yacdany\\Desktop\\TaskList\\obj\\",
+        "outputPath": "c:\\Users\\Yacdany\\Desktop\\TaskList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yacdany\\AppData\\Roaming\\NuGet\\NuGet.Config",
