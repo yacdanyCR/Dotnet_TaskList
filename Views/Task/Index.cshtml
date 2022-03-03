@@ -1,1 +1,36 @@
-<h1>You are in the Task Index View</h1>
+@model IEnumerable<TaskModel>
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<div class="col-xs-1-12 col-md-6  d-flex justify-content-center">
+    <table class="table  striped table-inverse table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Descrption</th>
+                <th>Created</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Task</td>
+                    <td>@item.Description</td>
+                    <td>@item.CreatedDateTime</td>
+                    <td>
+                        <button class="btn btn-primary">Edit</button>
+                        <form method="post">
+                            <input  asp-for="@item.Id" />
+                            <button type="hidden" class="btn btn-danger" asp-controller="Task"asp-action="Delete" >Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
