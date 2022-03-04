@@ -3,33 +3,42 @@
     ViewData["Title"] = "Tasks";
 }
 
-<div class="col-md-8  d-flex justify-content-center">
-    <table class="table  striped table-inverse table-responsive">
-        <thead class="thead-inverse">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Descrption</th>
-                <th>Created</th>
-                <th colspan="2">Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Task</td>
-                    <td>@item.Description</td>
-                    <td>@item.CreatedDateTime</td>
-                    <td>
-                        <button class="btn btn-primary">Edit</button>
-                    </td>
-                    <td>
-                        @Html.ActionLink("Delete","Delete",new{deleteId=item.Id},new {@class="btn btn-danger"})
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="container">
+    <div class="row  d-flex justify-content-center">
+        <div class="col-md-3">
+            <a class="btn btn-primary" asp-controller="Task" asp-action="Create">Add Task</a>
+        </div>
+    </div>
+    <div class="row  d-flex justify-content-center">
+        <div class="col-md-6">
+            <table class="table  striped table-inverse table-responsive">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Descrption</th>
+                        <th>Created</th>
+                        <th colspan="2">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Task</td>
+                            <td>@item.Description</td>
+                            <td>@item.CreatedDateTime</td>
+                            <td>
+                                <a class="btn btn-primary">Edit</a>
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete","Delete",new{id=item.Id},new {@class="btn btn-danger"})
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
