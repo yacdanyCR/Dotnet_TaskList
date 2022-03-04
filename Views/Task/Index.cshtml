@@ -4,9 +4,9 @@
 }
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <a class="btn btn-primary">Add Task</a>
+    <div class="row  d-flex justify-content-center">
+        <div class="col-md-3">
+            <a class="btn btn-primary" asp-controller="Task" asp-action="Create">Add Task</a>
         </div>
     </div>
     <div class="row  d-flex justify-content-center">
@@ -30,7 +30,7 @@
                             <td>@item.Description</td>
                             <td>@item.CreatedDateTime</td>
                             <td>
-                                <button class="btn btn-primary">Edit</button>
+                                <a class="btn btn-primary">Edit</a>
                             </td>
                             <td>
                                 @Html.ActionLink("Delete","Delete",new{id=item.Id},new {@class="btn btn-danger"})

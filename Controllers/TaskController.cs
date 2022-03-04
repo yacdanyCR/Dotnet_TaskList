@@ -22,14 +22,33 @@ namespace TaskList
             return View(objTasksList);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(TaskModel obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Tasks.Add(obj);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || id <= 0)
             {
                 return NotFound();
             }
-            var taskObj=await _db.Tasks.FirstOrDefaultAsync(e=>e.Id==id);
-            if(taskObj==null){
+            var taskObj = await _db.Tasks.FirstOrDefaultAsync(e => e.Id == id);
+            if (taskObj == null)
+            {
                 return NotFound();
             }
 
